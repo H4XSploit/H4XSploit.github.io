@@ -2,51 +2,142 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
     <title>eSign Installation Guide</title>
     <!-- Google Font for Modern Look -->
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
-    <!-- Google AdSense Script -->
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2525521769938585" crossorigin="anonymous"></script>
     <style>
-        /* Your existing CSS */
+        body {
+            font-family: 'Roboto', sans-serif;
+            background: linear-gradient(135deg, #1a1a1a, #3c3c3c);
+            color: #ffffff;
+            margin: 0;
+            padding: 0;
+            overflow: auto; /* Allow scrolling */
+            height: 100vh;
+            width: 100vw;
+            position: relative;
+        }
+        .container {
+            max-width: 90%; /* Adjusted for better fit on small screens */
+            margin: 20px auto;
+            padding: 20px;
+            background-color: rgba(0, 0, 0, 0.5); /* Even more transparent background */
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+            position: relative;
+            z-index: 1;
+        }
+        h1 {
+            color: #ffffff;
+            margin-bottom: 10px;
+            font-weight: 700;
+            font-size: 24px;
+        }
+        .status {
+            display: inline-block;
+            padding: 5px 10px;
+            background-color: #4CAF50; /* Green background */
+            color: white;
+            border-radius: 5px;
+            font-weight: 500;
+            margin-bottom: 10px;
+        }
+        p {
+            font-size: 16px;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+        .note {
+            font-size: 14px;
+            background-color: rgba(44, 44, 44, 0.5); /* More transparent background */
+            padding: 10px;
+            border-radius: 8px;
+            margin-top: 20px;
+            text-align: left;
+            line-height: 1.5;
+        }
+        .step {
+            background-color: rgba(44, 44, 44, 0.5); /* More transparent background */
+            padding: 15px;
+            border-radius: 8px;
+            margin: 20px 0;
+            font-size: 16px;
+            text-align: left;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        }
+        .button {
+            display: block;
+            width: 100%;
+            height: 50px;
+            margin: 10px 0;
+            background-color: #4a4a4a;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            text-decoration: none;
+            text-align: center;
+            line-height: 50px;
+            transition: background-color 0.3s, transform 0.2s;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        }
+        .button:hover {
+            background-color: #5a5a5a;
+            transform: translateY(-2px);
+        }
+        .icon {
+            margin-left: 10px;
+        }
+        .divider {
+            height: 1px;
+            background-color: #444;
+            margin: 20px 0;
+            width: 100%;
+        }
+        #background {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            background: url('https://example.com/background.jpg') no-repeat center center fixed;
+            background-size: cover;
+        }
     </style>
 </head>
 <body>
+    <div id="background"></div>
     <div class="container">
         <h1>eSign Installation Guide</h1>
-        <!-- Ad Slot -->
-        <ins class="adsbygoogle"
-             style="display:block; text-align:center;"
-             data-ad-client="ca-pub-2525521769938585"
-             data-ad-slot="1234567890"
-             data-ad-format="auto"></ins>
-        <script>
-            (adsbygoogle = window.adsbygoogle || []).push({});
-        </script>
-        
-        <!-- Existing Content -->
+        <!-- Status Label -->
         <div class="status">UPDATED</div>
         <p>Follow these three simple steps to complete the eSign installation:</p>
 
         <!-- Step-by-Step Instructions with Clear Dividers -->
         <div class="step">
             <strong>Step 1:</strong> Install the DNS configuration.
-            <a href="https://github.com/khoindvnDNS/iOS/raw/main/DNS/khoindns.mobileconfig" class="button" target="_blank">🔗 Download Khovind’s DNS <span class="icon">⬇️</span></a>
+            <a href="https://github.com/khoindvnDNS/iOS/raw/main/DNS/khoindns.mobileconfig" class="button">🔗 Download Khovind’s DNS <span class="icon">⬇️</span></a>
         </div>
 
         <div class="divider"></div>
 
         <div class="step">
-            <strong>Step 2:</strong> Download and install eSign.
-            <a href="https://api.khoindvn.eu.org/EHXoPK" class="button" target="_blank">⚡ Download eSign <span class="icon">🔥</span></a>
+            <strong>Step 2:</strong> Download and install eSign profiles. Try each link until one works. If a profile fails to install, you might encounter an internet connection error. Please try the next profile until you find one that works.
+            <a href="https://api.khoindvn.eu.org/fK34ZN" class="button">🔥 Download Profile 1 <span class="icon">🔥</span></a>
+            <a href="https://api.khoindvn.eu.org/S3pESj" class="button">🔥 Download Profile 2 <span class="icon">🔥</span></a>
+            <a href="https://api.khoindvn.eu.org/GqtMdU" class="button">🔥 Download Profile 3 <span class="icon">🔥</span></a>
+            <a href="https://api.khoindvn.eu.org/JdI495" class="button">🔥 Download Profile 4 <span class="icon">🔥</span></a>
+            <a href="https://api.khoindvn.eu.org/aJJPlE" class="button">🔥 Download Profile 5 <span class="icon">🔥</span></a>
+            <a href="https://api.khoindvn.eu.org/PYdXWo" class="button">🔥 Download Profile 6 <span class="icon">🔥</span></a>
         </div>
 
         <div class="divider"></div>
 
         <div class="step">
             <strong>Step 3:</strong> Download the certificate and upload it to eSign.
-            <a href="https://github.com/JorkThePork/JorkHubV1/raw/main/Esign-Certs.zip" class="button" target="_blank">🔒 Download Certificates <span class="icon">🔥😊</span></a>
+            <a href="https://github.com/khoindvnDNS/iOS/raw/main/DNS/Esign-Certs.zip" class="button">🔒 Download Certificates <span class="icon">🔥😊</span></a>
         </div>
 
         <!-- Additional Information Note -->
@@ -59,14 +150,40 @@
         </div>
     </div>
 
-    <!-- Another Ad Slot -->
-    <ins class="adsbygoogle"
-         style="display:block; text-align:center;"
-         data-ad-client="ca-pub-2525521769938585"
-         data-ad-slot="0987654321"
-         data-ad-format="auto"></ins>
+    <!-- Three.js Library for 3D Animations -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
     <script>
-        (adsbygoogle = window.adsbygoogle || []).push({});
+        // Create a basic 3D scene
+        const scene = new THREE.Scene();
+        const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+        const renderer = new THREE.WebGLRenderer();
+        renderer.setSize(window.innerWidth, window.innerHeight);
+        document.getElementById('background').appendChild(renderer.domElement);
+
+        // Add a rotating cube for animation
+        const geometry = new THREE.BoxGeometry();
+        const material = new THREE.MeshBasicMaterial({ color: 0xff5733, wireframe: true });
+        const cube = new THREE.Mesh(geometry, material);
+        scene.add(cube);
+
+        camera.position.z = 5;
+
+        // Animation function
+        function animate() {
+            requestAnimationFrame(animate);
+            cube.rotation.x += 0.01;
+            cube.rotation.y += 0.01;
+            renderer.render(scene, camera);
+        }
+
+        animate();
+
+        // Adjust scene on window resize
+        window.addEventListener('resize', () => {
+            renderer.setSize(window.innerWidth, window.innerHeight);
+            camera.aspect = window.innerWidth / window.innerHeight;
+            camera.updateProjectionMatrix();
+        });
     </script>
 </body>
 </html>
