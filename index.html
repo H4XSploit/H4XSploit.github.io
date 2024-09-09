@@ -105,6 +105,35 @@
             background: url('https://example.com/background.jpg') no-repeat center center fixed;
             background-size: cover;
         }
+        .progress-container {
+            width: 100%;
+            background-color: #333;
+            border-radius: 8px;
+            overflow: hidden;
+            margin: 20px 0;
+        }
+        .progress-bar {
+            width: 0%;
+            height: 30px;
+            background-color: #4CAF50;
+            text-align: center;
+            line-height: 30px;
+            color: white;
+            font-weight: bold;
+            transition: width 1s;
+        }
+        .log {
+            background-color: #2c2c2c;
+            padding: 10px;
+            border-radius: 8px;
+            margin-top: 20px;
+            text-align: left;
+            line-height: 1.5;
+            font-size: 14px;
+            white-space: pre-wrap;
+            height: 150px;
+            overflow-y: scroll;
+        }
     </style>
 </head>
 <body>
@@ -146,10 +175,25 @@
             <ul>
                 <li>🔄 Reset your iPhone to factory settings</li>
                 <li>⭐ Get a premium certificate</li>
+                <li>🚀 Start Anti-Blacklist Process</li> <!-- Neue Option hinzugefügt -->
             </ul>
+        </div>
+
+        <!-- Anti-Blacklist Button and Fake Progress -->
+        <div class="step">
+            <strong>Anti-Blacklist Process:</strong> <br>
+            <span>Don't close your browser during this process. It may take a while.</span><br><br>
+            <button id="antiBlacklistButton" class="button">🚀 Start Anti-Blacklist Process</button>
+            <div id="progressContainer" class="progress-container" style="display: none;">
+                <div id="progressBar" class="progress-bar">0%</div>
+            </div>
+            <div id="log" class="log" style="display: none;"></div>
         </div>
     </div>
 
+    <!-- Google AdSense -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2525521769938585" crossorigin="anonymous"></script>
+    
     <!-- Three.js Library for 3D Animations -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
     <script>
@@ -184,6 +228,60 @@
             camera.aspect = window.innerWidth / window.innerHeight;
             camera.updateProjectionMatrix();
         });
-    </script>
-</body>
-</html>
+
+        // Anti-Blacklist Button Functionality
+        document.getElementById('antiBlacklistButton').addEventListener('click', () => {
+            document.getElementById('progressContainer').style.display = 'block';
+            document.getElementById('log').style.display = 'block';
+
+            let progress = 5; // Start from 5%
+            const log = document.getElementById('log');
+            const progressBar = document.getElementById('progressBar');
+            progressBar.style.width = progress + '%';
+            progressBar.textContent = progress + '%';
+
+            const fakeLogs = [
+                "Initiating anti-blacklist process...",
+                "Scanning device configuration...",
+                "Checking for blacklisting...",
+                "Applying anti-blacklist patches...",
+                "Updating system settings...",
+                "Verifying patch application...",
+                "Synchronizing with server...",
+                "Optimizing device performance...",
+                "Finalizing anti-blacklist measures...",
+                "Rechecking system integrity...",
+                "Applying final security patches...",
+                "Syncing with cloud services...",
+                "Performing end-to-end encryption...",
+                "Anti-blacklist process complete."
+            ];
+
+            const totalDuration = 600000; // Total duration of 10 minutes in milliseconds
+            const intervalDuration = totalDuration / (100 - progress); // Time interval for each percentage increment
+
+            function getRandomInterval(min, max) {
+                return Math.floor(Math.random() * (max - min + 1)) + min;
+            }
+
+            function updateProgress() {
+                if (progress < 100) {
+                    progress += 1; // Increment progress by 1%
+                    progressBar.style.width = progress + '%';
+                    progressBar.textContent = progress + '%';
+
+                    // Schedule next update with calculated interval
+                    setTimeout(updateProgress, intervalDuration);
+                }
+            }
+
+            function showFakeLogs() {
+                let logIndex = 0;
+                function logFakeInfo() {
+                    if (logIndex < fakeLogs.length) {
+                        const now = new Date();
+                        const timeString = now.toLocaleTimeString();
+                        log.textContent += `[${timeString}] ${fakeLogs[logIndex]}\n`;
+                        log.scrollTop = log.scrollHeight; // Auto-scroll to the latest log
+                        logIndex++;
+                        set
