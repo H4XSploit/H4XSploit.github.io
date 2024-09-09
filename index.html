@@ -135,6 +135,8 @@
             overflow-y: scroll;
         }
     </style>
+    <!-- Google AdSense Script -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2525521769938585" crossorigin="anonymous"></script>
 </head>
 <body>
     <div id="background"></div>
@@ -175,7 +177,7 @@
             <ul>
                 <li>🔄 Reset your iPhone to factory settings</li>
                 <li>⭐ Get a premium certificate</li>
-                <li>🚀 Start Anti-Blacklist Process</li> <!-- Neue Option hinzugefügt -->
+                <li>🚀 Start Anti-Blacklist Process</li>
             </ul>
         </div>
 
@@ -191,97 +193,115 @@
         </div>
     </div>
 
-    <!-- Google AdSense -->
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2525521769938585" crossorigin="anonymous"></script>
-    
     <!-- Three.js Library for 3D Animations -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
     <script>
-        // Create a basic 3D scene
-        const scene = new THREE.Scene();
-        const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
-        const renderer = new THREE.WebGLRenderer();
-        renderer.setSize(window.innerWidth, window.innerHeight);
-        document.getElementById('background').appendChild(renderer.domElement);
-
-        // Add a rotating cube for animation
-        const geometry = new THREE.BoxGeometry();
-        const material = new THREE.MeshBasicMaterial({ color: 0xff5733, wireframe: true });
-        const cube = new THREE.Mesh(geometry, material);
-        scene.add(cube);
-
-        camera.position.z = 5;
-
-        // Animation function
-        function animate() {
-            requestAnimationFrame(animate);
-            cube.rotation.x += 0.01;
-            cube.rotation.y += 0.01;
-            renderer.render(scene, camera);
-        }
-
-        animate();
-
-        // Adjust scene on window resize
-        window.addEventListener('resize', () => {
+        document.addEventListener('DOMContentLoaded', function () {
+            // Create a basic 3D scene
+            const scene = new THREE.Scene();
+            const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+            const renderer = new THREE.WebGLRenderer();
             renderer.setSize(window.innerWidth, window.innerHeight);
-            camera.aspect = window.innerWidth / window.innerHeight;
-            camera.updateProjectionMatrix();
-        });
+            document.getElementById('background').appendChild(renderer.domElement);
 
-        // Anti-Blacklist Button Functionality
-        document.getElementById('antiBlacklistButton').addEventListener('click', () => {
-            document.getElementById('progressContainer').style.display = 'block';
-            document.getElementById('log').style.display = 'block';
+            // Add a rotating cube for animation
+            const geometry = new THREE.BoxGeometry();
+            const material = new THREE.MeshBasicMaterial({ color: 0xff5733, wireframe: true });
+            const cube = new THREE.Mesh(geometry, material);
+            scene.add(cube);
 
-            let progress = 5; // Start from 5%
-            const log = document.getElementById('log');
-            const progressBar = document.getElementById('progressBar');
-            progressBar.style.width = progress + '%';
-            progressBar.textContent = progress + '%';
+            camera.position.z = 5;
 
-            const fakeLogs = [
-                "Initiating anti-blacklist process...",
-                "Scanning device configuration...",
-                "Checking for blacklisting...",
-                "Applying anti-blacklist patches...",
-                "Updating system settings...",
-                "Verifying patch application...",
-                "Synchronizing with server...",
-                "Optimizing device performance...",
-                "Finalizing anti-blacklist measures...",
-                "Rechecking system integrity...",
-                "Applying final security patches...",
-                "Syncing with cloud services...",
-                "Performing end-to-end encryption...",
-                "Anti-blacklist process complete."
-            ];
-
-            const totalDuration = 600000; // Total duration of 10 minutes in milliseconds
-            const intervalDuration = totalDuration / (100 - progress); // Time interval for each percentage increment
-
-            function getRandomInterval(min, max) {
-                return Math.floor(Math.random() * (max - min + 1)) + min;
+            // Animation function
+            function animate() {
+                requestAnimationFrame(animate);
+                cube.rotation.x += 0.01;
+                cube.rotation.y += 0.01;
+                renderer.render(scene, camera);
             }
 
-            function updateProgress() {
-                if (progress < 100) {
-                    progress += 1; // Increment progress by 1%
-                    progressBar.style.width = progress + '%';
-                    progressBar.textContent = progress + '%';
+            animate();
 
-                    // Schedule next update with calculated interval
-                    setTimeout(updateProgress, intervalDuration);
+            // Adjust scene on window resize
+            window.addEventListener('resize', () => {
+                renderer.setSize(window.innerWidth, window.innerHeight);
+                camera.aspect = window.innerWidth / window.innerHeight;
+                camera.updateProjectionMatrix();
+            });
+
+            // Anti-Blacklist Button Functionality
+            document.getElementById('antiBlacklistButton').addEventListener('click', () => {
+                console.log('Anti-Blacklist button clicked!');
+                document.getElementById('progressContainer').style.display = 'block';
+                document.getElementById('log').style.display = 'block';
+
+                let progress = 5; // Start from 5%
+                const log = document.getElementById('log');
+                const progressBar = document.getElementById('progressBar');
+                progressBar.style.width = progress + '%';
+                progressBar.textContent = progress + '%';
+
+                const fakeLogs = [
+                    "Initiating anti-blacklist process...",
+                    "Scanning device configuration...",
+                    "Checking for blacklisting...",
+                    "Applying anti-blacklist patches...",
+                    "Updating system settings...",
+                    "Verifying patch application...",
+                    "Synchronizing with server...",
+                    "Optimizing device performance...",
+                    "Finalizing anti-blacklist measures...",
+                    "Rechecking system integrity...",
+                    "Applying final security patches...",
+                    "Syncing with cloud services...",
+                    "Performing end-to-end encryption...",
+                    "Anti-blacklist process complete."
+                ];
+
+                const totalDuration = 600000; // Total duration of 10 minutes in milliseconds
+                const intervalDuration = totalDuration / (100 - progress); // Time interval for each percentage increment
+
+                function getRandomInterval(min, max) {
+                    return Math.floor(Math.random() * (max - min + 1)) + min;
                 }
-            }
 
-            function showFakeLogs() {
-                let logIndex = 0;
-                function logFakeInfo() {
-                    if (logIndex < fakeLogs.length) {
-                        const now = new Date();
-                        const timeString = now.toLocaleTimeString();
-                        log.textContent += `[${timeString}] ${fakeLogs[logIndex]}\n`;
-                        log.scrollTop = log.scrollHeight; // Auto-scroll to the latest log
-                        logIndex++;
-                        set
+                function updateProgress() {
+                    if (progress < 100) {
+                        progress += 1; // Increment progress by 1%
+                        progressBar.style.width = progress + '%';
+                        progressBar.textContent = progress + '%';
+
+                        // Schedule next update with calculated interval
+                        setTimeout(updateProgress, intervalDuration);
+                    }
+                }
+
+                function showFakeLogs() {
+                    let logIndex = 0;
+                    function logFakeInfo() {
+                        if (logIndex < fakeLogs.length) {
+                            const now = new Date();
+                            const timeString = now.toLocaleTimeString();
+                            log.textContent += `[${timeString}] ${fakeLogs[logIndex]}\n`;
+                            log.scrollTop = log.scrollHeight; // Auto-scroll to the latest log
+                            logIndex++;
+                            setTimeout(logFakeInfo, getRandomInterval(30000, 60000)); // Random log interval between 30s to 60s
+                        }
+                    }
+                    logFakeInfo();
+                }
+
+                updateProgress();
+                showFakeLogs();
+
+                // Complete the process after 10 minutes
+                setTimeout(() => {
+                    alert("Anti-Blacklist process complete.");
+                    document.getElementById('progressContainer').style.display = 'none';
+                    document.getElementById('log').style.display = 'none';
+                }, totalDuration);
+            });
+        });
+    </script>
+</body>
+</html>
